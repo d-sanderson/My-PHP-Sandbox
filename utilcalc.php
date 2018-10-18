@@ -7,13 +7,14 @@
 			PNM: <input type="number" name="pnm">
 			<br>
 			GAS: <input type="number" name="gas">
-			Internet: 32
+
 			<br>
 			WATER: <input type="number" name="water">
 			<input type="submit">
+			<br> Internet: 32
 		</form>
 
-	Answer:<?php echo $_GET["pnm"] +  $_GET["gas"] + $_GET["water"] + 32 / 3;
+	Answer:<?php echo ($_GET["pnm"] +  $_GET["gas"] + $_GET["water"] + 32)/ 3;
 
 
 	?>
