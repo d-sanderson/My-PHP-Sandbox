@@ -40,6 +40,9 @@
 			<input type="submit">
 
 		</form>
+
+		<a href="madlibs2.php">Next</a>
+
 <?php
 
 $pluralNoun1 = $_GET["pluralNoun1"];

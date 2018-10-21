@@ -29,7 +29,14 @@ $cubeResult = cube(4);
 
 echo $cubeResult;
 
+$myArray = array(56,32,323,323,454,323,423);
 
+function cubed($n) {
+	return $n*$n*$n;
+}
+$arrayCubed = array_map(cubed, $myArray);
+
+print_r($arrayCubed);
 
 
 ?>
