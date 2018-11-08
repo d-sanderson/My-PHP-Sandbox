@@ -38,5 +38,24 @@ $arrayCubed = array_map(cubed, $myArray);
 
 print_r($arrayCubed);
 
+$isMale = false;
+$isTall = false;
+if($isMale) {
+	echo "You are male";
+} elseif ($isMale && !$isTall) {
+	echo "You are a short male";
+} elseif (!$isMale && $isTall) {
+	echo "you are not male but you are tall";
+} else {
+	echo "You are not male and not tall";
+}
+
+function getMax($num1, $num2) {
+	if($num1 > $num2) {
+		return $num1;
+	} else{
+		return $num2;
+	}
+}
 
 ?>

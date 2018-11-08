@@ -1,0 +1,28 @@
+body {
+	background-color: black;
+	color: white;
+	font-family: monospace;
+}
+
+button {
+	background-color: white;
+	color: black;
+}
+
+span {
+	font-weight: bolder;
+	color: red;
+}
+
+div {
+	font-size: 16pt;
+}
+
+section {
+
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-flow: wrap;
+}
+

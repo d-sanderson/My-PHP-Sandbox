@@ -1,8 +1,10 @@
 <html>
 	<head>
+		<link rel="stylesheet" href="style.css">
 		<title>Mad Libs</title>
 	</head>
 	<body>
+		<img src="mad_Libs_Logo.png">
 		<form action="madlibs.php" method="get">
 			Adjective:<input type="text" name="adjective1">
 			<br>
@@ -30,13 +32,14 @@
 			<br>
 			Noun:<input type="text" name="noun8">
 			<br>
+			<input type="submit">
 
 		</form>
 
 		<a href="madlibs2.php">Next</a>
 
 		<?php
-
+		error_reporting(0);
 		$adjective1 = $_GET["adjective1"];
 		$pluralNoun1 = $_GET["pluralNoun1"];
 		$adjective2 = $_GET["adjective2"];

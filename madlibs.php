@@ -1,9 +1,18 @@
 <html>
 	<head>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<title>Mad Libs</title>
 	</head>
 	<body>
-		<form action="madlibs.php" method="get">
+
+		<div id="container-fluid">
+			<div class="row">
+				<div class="col">
+			<img src="mad_Libs_Logo.png">
+			</div>
+
+	 <form id="form" action="madlibs.php" method="get">
 			 Plural Noun:<input type="text" name="pluralNoun1">
 			<br>
 			Adverb:<input type="text" name="adverb1">
@@ -40,10 +49,14 @@
 			<input type="submit">
 
 		</form>
+			</div>
 
+		</div>
 		<a href="madlibs2.php">Next</a>
 
 <?php
+
+error_reporting(0);
 
 $pluralNoun1 = $_GET["pluralNoun1"];
 $adverb1 = $_GET["adverb1"];
@@ -76,5 +89,11 @@ $verb2 = $_GET["verb2"];
 		echo "just play it $adjective2. Take a long pause before answering in a very<br>";
 		echo "$adjective3 voice.I'll have to $verb2<br>";
 ?>
+
+
+		<!--Bootstrap JS Libraries -->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 	</body>
 </html>
