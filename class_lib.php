@@ -4,8 +4,11 @@
  * OOP and Class Instantiation Practice for Assessment 11/21
  *
  * The First section of the Dog Class created below shows how to create a class with properties, methods, and constructors.
+ *
  * Properties are Variables within an Object.
+ *
  * Methods are functions within an Object.
+ *
  * Constructors allow you to initialize your object's properties (translation: give your properties values,) when you instantiate (create) an object.
  *
  * The sections that follow include an insert statement for the backend and query function to grab records from the mySQL Database.
@@ -26,7 +29,6 @@ class Dog {
 	protected $dogWeight;
 
 
-
 	/**
 	 * constructor for this Dog so that new Dogs can have properties declared when the Object is instantiated.
 	 *
@@ -34,8 +36,9 @@ class Dog {
 	 * @param string|$newDogBreed name of Dog's Breed, not null.
 	 * @param string $newDogOwner name of Dog's Owner, can be null.
 	 * @param int $newDogWeight weight of dogs in lbs.
-
-	  //TODO REVIEW THESE ERROR MESSAGES FOR ASSESSMENT/STUDY
+	 * //TODO add a isVaccinated property that is boolean?
+	 *
+	 * //TODO REVIEW THESE ERROR MESSAGES FOR ASSESSMENT/STUDY
 	 * @throws \InvalidArgumentException if data types are not valid
 	 * @throws \RangeException if data values are out of bounds (e.g., strings too long, negative integers)
 	 * @throws \TypeError if data types violate type hints
@@ -124,8 +127,8 @@ class Dog {
 	 **/
 
 	function setDogOwner($newDogOwner) {
-			$this->dogOwner = strtoupper($newDogOwner);
-		}
+		$this->dogOwner = strtoupper($newDogOwner);
+	}
 
 	/**
 	 * accessor method for dog owner
@@ -145,7 +148,7 @@ class Dog {
 	 * @throws \PDOException when mySQL related errors occur
 	 * @throws \TypeError if $pdo is not a PDO connection object
 	 **/
-	public function insert(\PDO $pdo) : void {
+	public function insert(\PDO $pdo): void {
 
 		// create query template
 		$query = "INSERT INTO dog(dogName, dogBreed, dogOwner, dogWeight) VALUES(:dogName, :dogBreed, :dogOwner, :dogWeight)";
@@ -171,8 +174,8 @@ class Dog {
 	 * @throws \TypeError when a variable are not the correct data type
 	 **/
 
-	public static function getDogByDogOwnerName(\PDO $pdo,  $dogOwner) : ?Dog {
-		//TODO might have to rewrite this since one owner can have multiple dogs. Need to find a function that would return a single value?
+	public static function getDogByDogOwnerName(\PDO $pdo, $dogOwner): ?Dog {
+		//TODO might have to rewrite this since one owner can have multiple dogs. Need to write a function that would return an Object? I think it would be better to write this function to return an SPLFixed Array. ASK George:  When is it better to return a Object versus an SPLFixedArray?
 		try {
 			//change the owner name to uppercase like it is stored in mySQL
 			$dogOwner = strtoupper($dogOwner);
@@ -200,7 +203,7 @@ class Dog {
 			// if the row couldn't be converted, rethrow it
 			throw(new \PDOException($exception->getMessage(), 0, $exception));
 		}
-		return($dog);
+		return ($dog);
 	}
 
 	/**
@@ -212,7 +215,7 @@ class Dog {
 	 * @throws \PDOException when mySQL related errors occur
 	 * @throws \TypeError when variables are not the correct data type
 	 **/
-	public static function getDogsByDogBreed(\PDO $pdo, $dogBreed) : \SplFixedArray {
+	public static function getDogsByDogBreed(\PDO $pdo, $dogBreed): \SplFixedArray {
 
 		try {
 			$dogBreed = strtoupper($dogBreed);
@@ -239,13 +242,11 @@ class Dog {
 				throw(new \PDOException($exception->getMessage(), 0, $exception));
 			}
 		}
-		return($dogs);
+		return ($dogs);
 	}
 
 
-	}
-
-
+}
 
 
 $comet = new Dog("Comet", "Boxer", "David", 60);
@@ -254,8 +255,6 @@ $patch = new Dog("Patch", "Pit", "David", 80);
 
 var_dump($comet);
 var_dump($patch);
-
-
 
 
 ?>
