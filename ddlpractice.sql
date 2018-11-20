@@ -1,0 +1,9 @@
+CREATE TABLE dog (
+	dogName		VARCHAR(20) NOT NULL,
+	dogBreed		VARCHAR(20) NOT NULL,
+	dogOwner		SMALLINT NULL,
+	dogWeight	SMALLINT NOT NULL,
+
+
+	PRIMARY KEY (dogName)
+);
