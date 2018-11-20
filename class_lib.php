@@ -8,7 +8,7 @@
  * Methods are functions within an Object.
  * Constructors allow you to initialize your object's properties (translation: give your properties values,) when you instantiate (create) an object.
  *
- * The sections that follow include an insert statement for the backend and query function to grab 
+ * The sections that follow include an insert statement for the backend and query function to grab records from the mySQL Database.
  * @author David Sanderson <sanderdj90@gmail.com>
  * @version 1.0.0
  **/
@@ -52,7 +52,7 @@ class Dog {
 
 	// declare methods
 
-	//TODO ADD Try/catch blocks on setters so only valid inputs can be entered.
+	//TODO ADD Try/Catch blocks on setters so only valid inputs can be entered.
 
 	/**
 	 * mutator method for dog Name
